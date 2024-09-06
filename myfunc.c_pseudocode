@@ -1,0 +1,32 @@
+/* project1.c - Ellie Ishii
+ * version 5
+ * EE160 - July 31st 2023
+ *
+ * PURPOSE:
+ * ========
+ * This code calculates the y-values of the user-input based function.
+ * The calculated y-values are then passed down to both 'secant.c' and 'project1.c'
+ *
+ * INPUT:
+ * ======
+ * a, b, c, d, e, f: double type coefficients of the polynomial function
+ * x: double type, current x-value that generates the table
+ *
+ * OUTPUT:
+ * =======
+ * F(x): double type, calculated y-value using the user-input based polynomial function
+ *
+ * VERSIONS:
+ * =========
+ * v1: Create a foundation by using a hard-coded quadratic function (x^2 - 10x +21) and a secant method as separate functions within the same source code
+ * v2: Modify the code to allow the user to input coefficients for a polynomial function of the form: a + bx + cx^2
+ * v3: Modify the polynomial function to the form: a + bx + cx^2 + dx^3 + ex^4 + fx^5
+ * v4: Separate the secant and polynomial functions from the main function and create a total of 3 files
+ * v5: Separate the polynomial function from the secant.c file and create a total of 5 files
+ *
+ * PSEUDOCODE:
+ * ===========
+ * recieve a, b, c, d, e, f, x
+ * define F(x) = a+bx+cx^2+dx^3+ex^4+fx^5
+ * return F(x)
+ */
