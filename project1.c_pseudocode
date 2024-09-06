@@ -1,0 +1,80 @@
+/* project1.c - Ellie Ishii
+ * version 5
+ * EE160 - July 31st 2023
+ *
+ * PURPOSE:
+ * ========
+ * This code asks the user to enter the coefficients for a polynomial of the form 'a + bx + cx^2 + dx^3 + ex^4 + fx^5',
+ * the range of x-values and the number of intervals. It uses the secant and myfunc files to display the x-values, y-values,
+ * the total sign changes, and roots, if there are any. Additionally, it asks if the user is done with the program or wants
+ * to continue by changing the search range for the table.
+ *
+ * INPUT:
+ * ======
+ * a, b, c, d, e, f: double type coefficients of the polynomial function
+ * xmin: double type starting x-value for table
+ * xmax: double type ending x-value for table
+ * steps: integer type number of intervals in which x-values gets broken into
+ *
+ * OUTPUT:
+ * =======
+ * prints a table, displays roots, and number of sign changes
+ *
+ * VERSIONS:
+ * =========
+ * v1: Create a foundation by using a hard-coded quadratic function (x^2 - 10x +21) and a secant method as separate functions within the same source code
+ * v2: Modify the code to allow the user to input coefficients for a polynomial function of the form: a + bx + cx^2
+ * v3: Modify the polynomial function to the form: a + bx + cx^2 + dx^3 + ex^4 + fx^5
+ * v4: Separate the secant and polynomial functions from the main function and create a total of 3 files
+ * v5: Separate the polynomial function from the secant.c file and create a total of 5 files
+ *
+ * PSEUDOCODE:
+ * ===========
+ * Declare double a, b, c, d, e, f
+ * Ask user to enter the coefficients for a polynomial of the form: a+bx+cx^2+dx^3+ex^4+fx^5
+ * Read and store inputs as a b c d e f
+ * Print "The function is: (the function with the values)"
+ * Declare and assign integer done = FALSE
+ * Start while loop while user is not done
+ *	Print "The range of x-values for calculations of the table?"
+ *	Declare double xmin and xmax
+ *	Print "Enter start end: "
+ *	Read and store inputs as xmin and xmax
+ *	Declare integer steps
+ *	Print "Enter the number of intervals for your table: "
+ *	Read and store input as steps
+ *	Declare double incr
+ *	Calculate incr (incr = (xmax - xmin) / steps)
+ *	Print "x-value      y-value" for the table
+ *	Declare double x
+ *	Declare integer i
+ *	Declare and initialize integer j = 0
+ *	Start FOR loop (initialize i = 0, loop until i<= steps, increment i by 1)
+ *              Assign x = xmin + i * incr
+ *              Declare and initialize double previousx =  x - incr
+ *              Print the calculated x and y values
+ *              Declare double x0, x1, x2, y0, y1, y2, xnew
+ *              Declare and initialize double epsilon = 0.001
+ *              Declare and set int signChange = FALSE
+*              If (F(previousx)<0 and F(x)>=0) or (F(previousx)>=0 and F(x)<0)
+ *                      Reassign the x values
+ *                      Set sign change = TRUE
+ *                      Start While loop while |F(a,b,c,d,e,f,x2)|>epsilon
+ *                              Set y1 = F1,
+ *                              Set y2 = F2
+ *                              Set xnew = X(x1, x2, y1, y2)
+ *                              Reassign the x values
+ *                      x = xnew
+ *                      Print where the root is located
+ *                      Increment j by 1
+ *              Else
+ *                      Print blank spaces
+ *	Print the total sign changes located on the table
+ *	Declare character choice
+ *	Print "Do you wish to change the search range for the table? (y/n)"
+ *	Read and store input as choice
+ *	If (choice = y or Y)
+ *              Rerun the program
+ *	Else
+ *              End the program
+ */
